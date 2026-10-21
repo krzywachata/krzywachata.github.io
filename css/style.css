@@ -1,0 +1,247 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --muted-color: #666666;
+    --border-color: #eaeaea;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 40px 20px;
+}
+
+/* Sektory boczne (nagłówek bez górnego paska) */
+.side-header {
+    position: fixed;
+    top: 40px;
+    z-index: 100;
+}
+
+.left-header {
+    left: 40px;
+}
+
+.right-header {
+    right: 40px;
+}
+
+.header-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 50%;
+    transition: opacity 0.2s ease;
+}
+
+.header-logo:hover {
+    opacity: 0.8;
+}
+
+.btn-blog {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 8px 18px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    background: transparent;
+}
+
+.btn-blog:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* Główny kontener */
+main {
+    max-width: 900px;
+    margin: 60px auto 0 auto;
+}
+
+/* Sekcja Hero */
+.hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--muted-color);
+    font-weight: 300;
+}
+
+/* Galeria zdjęć */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-photo-wrapper {
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.main-photo {
+    width: 100%;
+    max-height: 550px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.main-photo:hover {
+    transform: scale(1.01);
+}
+
+.thumbnails-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.thumb-item {
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.thumb-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.2s ease, transform 0.3s ease;
+}
+
+.thumb-img:hover {
+    opacity: 0.85;
+    transform: scale(1.02);
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-color);
+    line-height: 1;
+}
+
+/* Style dla podstrony Blog */
+.page-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.page-title h1 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 8px;
+}
+
+.page-title p {
+    color: var(--muted-color);
+    font-weight: 300;
+}
+
+.posts-list {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.post-preview {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 30px;
+}
+
+.post-date {
+    font-size: 0.85rem;
+    color: var(--muted-color);
+    margin-bottom: 6px;
+}
+
+.post-title {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.post-title a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.post-title a:hover {
+    opacity: 0.6;
+}
+
+.post-excerpt {
+    color: var(--muted-color);
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+}
+
+.read-more {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .side-header { top: 20px; }
+    .left-header { left: 20px; }
+    .right-header { right: 20px; }
+    main { margin-top: 80px; }
+    .hero h1 { font-size: 1.8rem; }
+}
