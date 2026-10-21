@@ -55,7 +55,7 @@
     <script>
         // 1. Dynamiczne pobieranie i ładowanie header.html
         // Jeśli plik z headerem jest w podfolderze '_includes', użyj: fetch('_includes/header.html')
-        fetch('header.html')
+        fetch('_includes/header.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Nie udało się załadować pliku header.html');
