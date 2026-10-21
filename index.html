@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pracownia Krzywa Chata – Ręcznie robione przedmioty użytkowe</title>
+    <meta name="description" content="Pracownia Krzywa Chata tworzy unikalne, ręcznie robione przedmioty użytkowe z naturalnych materiałów.">
+    
+    <!-- Podpięcie zewnętrznego pliku CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Dane strukturalne AI / SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CraftsStore",
+      "name": "Pracownia Krzywa Chata",
+      "description": "Ręcznie robione przedmioty użytkowe z naturalnych materiałów.",
+      "url": "https://krzywachata.github.io/"
+    }
+    </script>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="hero">
+            <h1>Pracownia Krzywa Chata</h1>
+            <p>Ręcznie robione przedmioty użytkowe z naturalnych materiałów.</p>
+        </section>
+
+        <section class="gallery">
+            <div class="main-photo-wrapper">
+                <img src="images/glowne.jpg" alt="Główne dzieło pracowni" class="main-photo lightbox-trigger" data-full="images/glowne.jpg">
+            </div>
+
+            <div class="thumbnails-row">
+                <div class="thumb-item">
+                    <img src="images/foto1.jpg" alt="Detale rzemiosła" class="thumb-img lightbox-trigger" data-full="images/foto1.jpg">
+                </div>
+                <div class="thumb-item">
+                    <img src="images/foto2.jpg" alt="Naturalne materiały" class="thumb-img lightbox-trigger" data-full="images/foto2.jpg">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="Powiększenie">
+    </div>
+
+    <script>
+        // Pobieranie header.html
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data);
+
+        // Skrypt Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        document.querySelectorAll('.lightbox-trigger').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.getAttribute('data-full');
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightboxClose.addEventListener('click', () => lightbox.classList.remove('active'));
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('active'); });
+    </script>
+</body>
+</html>
