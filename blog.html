@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog – Pracownia Krzywa Chata</title>
+    <meta name="description" content="Artykuły i opowieści z Pracowni Krzywa Chata o pracy z drewnem i naturalnymi materiałami.">
+    
+    <!-- Podpięcie wspólnego pliku CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="page-title">
+            <h1>Blog</h1>
+            <p>Zapiski z pracowni i refleksje o rzemiośle.</p>
+        </section>
+
+        <section class="posts-list">
+            <article class="post-preview">
+                <div class="post-date">14 Października 2026</div>
+                <h2 class="post-title"><a href="posts/pierwszy-wpis.html">Jak drewno uczy nas cierpliwości</a></h2>
+                <p class="post-excerpt">Każdy kawałek drewna trafiający do naszej pracowni ma swoją unikalną historię i charakter...</p>
+                <a href="posts/pierwszy-wpis.html" class="read-more">Czytaj całość &rarr;</a>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data);
+    </script>
+</body>
+</html>
