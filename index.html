@@ -22,6 +22,7 @@
 </head>
 <body>
 
+    <!-- Miejsce wczytania bocznego nagłówka -->
     <div id="header-container"></div>
 
     <main>
@@ -52,12 +53,21 @@
     </div>
 
     <script>
-        // Pobieranie header.html
+        // 1. Dynamiczne pobieranie i ładowanie header.html
+        // Jeśli plik z headerem jest w podfolderze '_includes', użyj: fetch('_includes/header.html')
         fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header-placeholder').innerHTML = data);
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Nie udało się załadować pliku header.html');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            })
+            .catch(error => console.error('Błąd nagłówka:', error));
 
-        // Skrypt Lightbox
+        // 2. Skrypt Lightbox
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const lightboxClose = document.getElementById('lightbox-close');
@@ -70,7 +80,9 @@
         });
 
         lightboxClose.addEventListener('click', () => lightbox.classList.remove('active'));
-        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('active'); });
+        lightbox.addEventListener('click', (e) => { 
+            if (e.target === lightbox) lightbox.classList.remove('active'); 
+        });
     </script>
 </body>
 </html>
