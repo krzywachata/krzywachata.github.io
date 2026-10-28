@@ -12,20 +12,25 @@
 </head>
 <body>
 
-<header class="site-header">
-  <a class="logo" href="#top">Pracownia <span>drewna</span></a>
+<aside class="side side-left">
+  <a class="logo" href="#top">Pracownia<br>drewna</a>
   <nav aria-label="Menu główne">
     <ul>
       <li><a href="#pracownia">Pracownia</a></li>
       <li><a href="#dostepne">Dostępne prace</a></li>
+      <li><a href="#zamowienie">Jak zamówić</a></li>
       <li><a href="#permakultura">Permakultura</a></li>
       <li><a href="#blog">Blog</a></li>
       <li><a href="#o-mnie">O mnie</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
   </nav>
-  <a class="btn btn-small" href="tel:+48000000000">Zadzwoń: 000 000 000</a>
-</header>
+</aside>
+
+<aside class="side side-right">
+  <a class="btn" href="tel:+48000000000">Zadzwoń<span> 000 000 000</span></a>
+  <button class="theme-toggle" type="button" aria-pressed="false">Tryb ciemny</button>
+</aside>
 
 <main id="top">
 
@@ -38,9 +43,7 @@
       <a class="btn btn-ghost" href="#dostepne">Zobacz dostępne prace</a>
     </p>
   </div>
-  <div class="hero-image grain" role="img" aria-label="Miejsce na zdjęcie: łyżki i miseczka na drewnianym stole">
-    <span>Wstaw zdjęcie: łyżki i miseczka na stole</span>
-  </div>
+  <div class="hero-image grain" role="img" aria-label="Miejsce na zdjęcie: łyżki i miseczka na drewnianym stole"></div>
 </section>
 
 <section id="pracownia" class="section">
@@ -64,7 +67,7 @@
   </div>
 </section>
 
-<section id="dostepne" class="section section-tint">
+<section id="dostepne" class="section">
   <h2>Aktualnie dostępne</h2>
   <p class="lead">Gotowe egzemplarze. Kliknij „Zapytaj” przy wybranej pracy, a ja odpowiem w ciągu 24 godzin.</p>
   <div class="grid-4">
@@ -99,7 +102,7 @@
   </div>
 </section>
 
-<section class="section">
+<section id="zamowienie" class="section">
   <h2>Jak zamówić</h2>
   <ol class="steps">
     <li><strong>Napisz lub zadzwoń.</strong> Powiedz, co chcesz dostać i do czego ma służyć.</li>
@@ -109,7 +112,7 @@
   </ol>
 </section>
 
-<section class="section section-dark">
+<section class="section">
   <h2>Drewno i wykończenie</h2>
   <div class="grid-3 plain">
     <div><h3>Skąd drewno</h3><p>Gałęzie po cięciu sadu, połamane drzewa, drewno z odzysku. Nic nie ścinam na pokaz.</p></div>
@@ -129,7 +132,7 @@
   <p><a class="more" href="#">Wszystkie porady</a></p>
 </section>
 
-<section id="blog" class="section section-tint">
+<section id="blog" class="section">
   <h2>Z pracowni</h2>
   <div class="grid-3">
     <article class="post"><h3><a href="#">Od gałęzi do łyżki: cały proces</a></h3><p>Siedem etapów ze zdjęciami.</p></article>
@@ -175,99 +178,14 @@
 
 </main>
 
-<footer class="site-footer">
-  <p>© 2026 Pracownia drewna. Wszystkie prace wykonane ręcznie.</p>
-  <p><a href="#">Instagram</a> <a href="#">Facebook</a></p>
-</footer>
-
-<a class="call-fab" href="tel:+48000000000">Zadzwoń</a>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pracownia Krzywa Chata – Ręcznie robione przedmioty użytkowe</title>
-    <meta name="description" content="Pracownia Krzywa Chata tworzy unikalne, ręcznie robione przedmioty użytkowe z naturalnych materiałów.">
-    
-    <!-- Podpięcie zewnętrznego pliku CSS -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Dane strukturalne AI / SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CraftsStore",
-      "name": "Pracownia Krzywa Chata",
-      "description": "Ręcznie robione przedmioty użytkowe z naturalnych materiałów.",
-      "url": "https://krzywachata.github.io/"
-    }
-    </script>
-</head>
-<body>
-
-    <!-- Miejsce wczytania bocznego nagłówka -->
-    <div id="header-container"></div>
-
-    <main>
-        <section class="hero">
-            <h1>Pracownia Krzywa Chata</h1>
-            <p>Ręcznie robione przedmioty użytkowe z naturalnych materiałów.</p>
-        </section>
-
-        <section class="gallery">
-            <div class="main-photo-wrapper">
-                <img src="images/glowne.jpg" alt="Główne dzieło pracowni" class="main-photo lightbox-trigger" data-full="images/glowne.jpg">
-            </div>
-
-            <div class="thumbnails-row">
-                <div class="thumb-item">
-                    <img src="images/foto1.jpg" alt="Detale rzemiosła" class="thumb-img lightbox-trigger" data-full="images/foto1.jpg">
-                </div>
-                <div class="thumb-item">
-                    <img src="images/foto2.jpg" alt="Naturalne materiały" class="thumb-img lightbox-trigger" data-full="images/foto2.jpg">
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox-close" id="lightbox-close">&times;</span>
-        <img class="lightbox-img" id="lightbox-img" src="" alt="Powiększenie">
-    </div>
-
-    <script>
-        // 1. Dynamiczne pobieranie i ładowanie header.html
-        // Jeśli plik z headerem jest w podfolderze '_includes', użyj: fetch('_includes/header.html')
-        fetch('_includes/header.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Nie udało się załadować pliku header.html');
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-            })
-            .catch(error => console.error('Błąd nagłówka:', error));
-
-        // 2. Skrypt Lightbox
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxClose = document.getElementById('lightbox-close');
-
-        document.querySelectorAll('.lightbox-trigger').forEach(img => {
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.getAttribute('data-full');
-                lightbox.classList.add('active');
-            });
-        });
-
-        lightboxClose.addEventListener('click', () => lightbox.classList.remove('active'));
-        lightbox.addEventListener('click', (e) => { 
-            if (e.target === lightbox) lightbox.classList.remove('active'); 
-        });
-    </script>
+<script>
+(function(){
+  var b=document.querySelector('.theme-toggle'),r=document.documentElement;
+  function set(d){r.classList.toggle('dark',d);b.setAttribute('aria-pressed',d);b.textContent=d?'Tryb jasny':'Tryb ciemny';}
+  var d=false;try{d=localStorage.getItem('theme')==='dark';}catch(e){}
+  set(d);
+  b.addEventListener('click',function(){d=!d;set(d);try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}});
+})();
+</script>
 </body>
 </html>
