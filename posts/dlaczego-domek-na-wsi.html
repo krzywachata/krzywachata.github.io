@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ZMIEŃ: tytuł i opis wpisu -->
+<title>Jak drewno uczy nas cierpliwości – Pracownia Krzywa Chata</title>
+<meta name="description" content="Krótki opis wpisu widoczny w wynikach Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Young+Serif&display=swap" rel="stylesheet">
+<!-- UWAGA: w folderze posts/ ścieżki zaczynają się od ../ -->
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<aside class="side side-left">
+  <a class="logo" href="../index.html">Pracownia<br>drewna</a>
+  <nav aria-label="Menu główne">
+    <ul>
+      <li><a href="../index.html#pracownia">Pracownia</a></li>
+      <li><a href="../index.html#dostepne">Dostępne prace</a></li>
+      <li><a href="../index.html#zamowienie">Jak zamówić</a></li>
+      <li><a href="../index.html#permakultura">Permakultura</a></li>
+      <li><a href="../blog.html" aria-current="page">Blog</a></li>
+      <li><a href="../index.html#o-mnie">O mnie</a></li>
+      <li><a href="../index.html#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<aside class="side side-right">
+  <a class="btn" href="tel:+48000000000">Zadzwoń<span> 000 000 000</span></a>
+  <button class="theme-toggle" type="button" aria-pressed="false">Tryb ciemny</button>
+</aside>
+
+<main>
+  <article class="post-page">
+    <a class="back-link" href="../blog.html">&larr; Wszystkie wpisy</a>
+
+    <!-- ZMIEŃ: tytuł i data -->
+    <h1>Dlaczego domek na wsi?</h1>
+    <p class="post-meta">30 październik 2026</p>
+
+    <!-- ZMIEŃ: treść wpisu poniżej -->
+    <div class="post-body">
+      <p>Każdy kawałek drewna trafiający do pracowni ma swoją historię. Jabłoń z sadu po burzy, gałąź wiśni z wiosennego cięcia, kawałek starej belki ze stodoły. Zanim zrobię z niego łyżkę, muszę poczekać.</p>
+
+      <h2>Suszenie nie lubi pośpiechu</h2>
+      <p>Świeże drewno zawiera dużo wody. Jeśli wyschnie zbyt szybko, pęka. Dlatego kawałki leżą u mnie całymi miesiącami, a czasem latami.</p>
+
+      <!-- Zdjęcie: zamień <div class="grain"> na <img src="../img/nazwa.jpg" alt="opis zdjęcia"> -->
+      <div class="grain" role="img" aria-label="Miejsce na zdjęcie"></div>
+
+      <blockquote>Drewno nie zna terminów, ale zawsze zdąży na czas.</blockquote>
+
+      <h2>Co z tego wynika dla zamówień</h2>
+      <p>Pracuję powoli i uczciwie o tym piszę. Dzięki temu rzeczy, które robię, mogą służyć przez dziesiątki lat.</p>
+      <ul>
+        <li>czas realizacji to zwykle 2–4 tygodnie</li>
+        <li>drewno wybieram i suszę z wyprzedzeniem</li>
+        <li>każdą pracę wykańczam olejem lnianym i woskiem</li>
+      </ul>
+    </div>
+
+    <div class="post-cta">
+      <p>Podoba Ci się taki sposób pracy?</p>
+      <a class="btn" href="../index.html#kontakt">Zapytaj o wykonanie</a>
+    </div>
+  </article>
+</main>
+
+<script>
+(function(){
+  var b=document.querySelector('.theme-toggle'),r=document.documentElement;
+  function set(d){r.classList.toggle('dark',d);b.setAttribute('aria-pressed',d);b.textContent=d?'Tryb jasny':'Tryb ciemny';}
+  var d=false;try{d=localStorage.getItem('theme')==='dark';}catch(e){}
+  set(d);
+  b.addEventListener('click',function(){d=!d;set(d);try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}});
+})();
+</script>
+</body>
+</html>
