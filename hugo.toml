@@ -1,0 +1,39 @@
+baseURL = "https://twojadomena.pl/"
+languageCode = "pl"
+defaultContentLanguage = "pl"
+title = "Pracownia drewna"
+
+[params]
+  description = "Ręcznie robione szafeczki ozdobne, drewniane łyżki i miseczki. Wykonywane na zamówienie. Porady permakulturowe."
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[[menu.main]]
+  name = "Pracownia"
+  url = "/#pracownia"
+  weight = 10
+[[menu.main]]
+  name = "Dostępne prace"
+  url = "/#dostepne"
+  weight = 20
+[[menu.main]]
+  name = "Jak zamówić"
+  url = "/#zamowienie"
+  weight = 30
+[[menu.main]]
+  name = "Permakultura"
+  url = "/#permakultura"
+  weight = 40
+[[menu.main]]
+  name = "Blog"
+  pageRef = "blog"
+  weight = 50
+[[menu.main]]
+  name = "O mnie"
+  url = "/#o-mnie"
+  weight = 60
+[[menu.main]]
+  name = "Kontakt"
+  url = "/#kontakt"
+  weight = 70

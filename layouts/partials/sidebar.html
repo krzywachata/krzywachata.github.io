@@ -1,0 +1,16 @@
+{{ $page := . }}
+<aside class="side side-left">
+  <a class="logo" href="{{ "/" | relURL }}">Pracownia<br>drewna</a>
+  <nav aria-label="Menu główne">
+    <ul>
+      {{ range site.Menus.main }}
+      <li><a href="{{ .URL }}"{{ if and .PageRef (eq $page.Section .PageRef) }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+</aside>
+
+<aside class="side side-right">
+  <a class="btn" href="tel:+48000000000">Zadzwoń<span> 000 000 000</span></a>
+  <button class="theme-toggle" type="button" aria-pressed="false">Tryb ciemny</button>
+</aside>

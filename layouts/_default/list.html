@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="page-title">
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p>{{ . }}</p>{{ end }}
+</section>
+<section class="posts-list">
+  {{ range .Pages.ByDate.Reverse }}
+  <article class="post-preview">
+    <div class="post-date">{{ .Date | time.Format ":date_long" }}</div>
+    <h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <p class="post-excerpt">{{ with .Description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
+    <a href="{{ .RelPermalink }}" class="read-more">Czytaj całość</a>
+  </article>
+  {{ end }}
+</section>
+{{ end }}

@@ -1,0 +1,14 @@
+{{ define "main" }}
+<article class="post-page">
+  {{ with .Parent }}<a class="back-link" href="{{ .RelPermalink }}">&larr; Wszystkie wpisy</a>{{ end }}
+  <h1>{{ .Title }}</h1>
+  {{ if not .Date.IsZero }}<p class="post-meta">{{ .Date | time.Format ":date_long" }}</p>{{ end }}
+  <div class="post-body">
+    {{ .Content }}
+  </div>
+  <div class="post-cta">
+    <p>Podoba Ci się taki sposób pracy?</p>
+    <a class="btn" href="{{ "/#kontakt" | relURL }}">Zapytaj o wykonanie</a>
+  </div>
+</article>
+{{ end }}

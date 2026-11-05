@@ -1,0 +1,9 @@
+<script>
+(function(){
+  var b=document.querySelector('.theme-toggle'),r=document.documentElement;
+  function set(d){r.classList.toggle('dark',d);b.setAttribute('aria-pressed',d);b.textContent=d?'Tryb jasny':'Tryb ciemny';}
+  var d=false;try{d=localStorage.getItem('theme')==='dark';}catch(e){}
+  set(d);
+  b.addEventListener('click',function(){d=!d;set(d);try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}});
+})();
+</script>
